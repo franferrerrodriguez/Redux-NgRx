@@ -1,0 +1,8 @@
+<h2>CHILD {{counter}}</h2>
+
+<button (click)="multiply()">Multiply</button>
+<button (click)="divide()">Divide</button>
+
+<hr/>
+
+<app-grandchild [counter]="counter" (counterOutput)="captureCounterOutput($event)"></app-grandchild>

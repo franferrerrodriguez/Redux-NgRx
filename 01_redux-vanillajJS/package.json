@@ -1,0 +1,16 @@
+{
+  "name": "01-redux-basic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.8.1",
+    "redux": "^4.2.0",
+    "typescript": "^4.6.4"
+  }
+}
