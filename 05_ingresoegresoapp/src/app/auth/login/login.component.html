@@ -17,9 +17,11 @@
                                        placeholder="Email">
 
                                 <div class="input-group-append">
-                                <span class="input-group-text">
-                                    <i class="fa fa-check-circle"></i>
-                                </span>
+                                    <span class="input-group-text">
+                                        <i *ngIf="form.get('email')?.valid" 
+                                            class="fa fa-check-circle">
+                                        </i>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -35,14 +37,30 @@
                                 
                                 <div class="input-group-append">
                                     <span class="input-group-text">
-                                        <i class="fa fa-check-circle"></i>
+                                        <i *ngIf="form.get('email')?.valid" 
+                                            class="fa fa-check-circle">
+                                        </i>
                                     </span>
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <button class="btn btn-primary submit-btn btn-block">Login</button>
+                            <button type="submit" 
+                                *ngIf="!isLoading"
+                                [disabled]="form.invalid"
+                                class="btn btn-primary submit-btn btn-block">
+                                Login
+                            </button>
+
+                            <button 
+                                type="button" 
+                                *ngIf="isLoading"
+                                [disabled]="form.invalid"
+                                class="btn btn-primary submit-btn btn-block">
+                                <i class="fa fa-spin fa-sync"></i>
+                                Espere...
+                            </button>
                         </div>
 
                         <div class="text-block text-center my-3">

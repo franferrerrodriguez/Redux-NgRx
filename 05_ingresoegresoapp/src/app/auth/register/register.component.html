@@ -9,13 +9,16 @@
 
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="email" 
-                                       class="form-control" 
-                                       formControlName="email"
-                                       placeholder="Email">
+                                <input 
+                                    type="email" 
+                                    class="form-control" 
+                                    formControlName="email"
+                                    placeholder="Email">
                                 <div class="input-group-append">
                                     <span class="input-group-text">
-                                        <i *ngIf="form.get('email')?.valid" class="fa fa-check-circle"></i>
+                                        <i *ngIf="form.get('email')?.valid" 
+                                            class="fa fa-check-circle">
+                                        </i>
                                     </span>
                                 </div>
                             </div>
@@ -23,23 +26,37 @@
 
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="password" 
-                                       class="form-control" 
-                                       formControlName="password"
-                                       placeholder="Password">
+                                <input 
+                                    type="password" 
+                                    class="form-control" 
+                                    formControlName="password"
+                                    placeholder="Password">
                                 <div class="input-group-append">
-                                <span class="input-group-text">
-                                    <i *ngIf="form.get('password')?.valid" class="fa fa-check-circle"></i>
-                                </span>
+                                    <span class="input-group-text">
+                                        <i *ngIf="form.get('password')?.valid" 
+                                            class="fa fa-check-circle">
+                                        </i>
+                                    </span>
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" 
-                                    [disabled]="form.invalid"
-                                    class="btn btn-primary submit-btn btn-block">
+                            <button 
+                                type="submit" 
+                                *ngIf="!isLoading"
+                                [disabled]="form.invalid"
+                                class="btn btn-primary submit-btn btn-block">
                                 Crear cuenta
+                            </button>
+
+                            <button 
+                                type="button" 
+                                *ngIf="isLoading"
+                                [disabled]="form.invalid"
+                                class="btn btn-primary submit-btn btn-block">
+                                <i class="fa fa-spin fa-sync"></i>
+                                Espere...
                             </button>
                         </div>
 

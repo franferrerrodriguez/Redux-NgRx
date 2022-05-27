@@ -4,22 +4,33 @@
             <div class="card-body">
                 <h4 class="card-title">Detalle de ingreso egreso</h4>
                 <table class="table">
-                <thead>
-                    <tr>
-                        <th>Descripción</th>
-                        <th>Monto</th>
-                        <th>Tipo</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Descripción</td>
-                        <td>Monto</td>
-                        <td>Tipo</td>
-                        <td>acciones</td>
-                    </tr>
-                </tbody>
+                    <thead>
+                        <tr>
+                            <th>Descripción</th>
+                            <th>Cantidad</th>
+                            <th>Tipo</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let ie of ingressEgressArray">
+                            <td>{{ ie.description }}</td>
+                            <td>{{ ie.amount }} €</td>
+                            <td [class.text-success]="ie.type === 'ingress'"
+                                [class.text-danger]="ie.type === 'egress'">
+                                {{ ie.type | mapType }}
+                            </td>
+                            <td>
+                                <button 
+                                    type="button" 
+                                    class="btn btn-danger btn-sm"
+                                    (click)="delete(ie.uid)">
+                                    <i class="fa fa-trash"></i>
+                                    Borrar
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
