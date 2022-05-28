@@ -4,7 +4,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { map, Observable, Subscription } from 'rxjs';
 import { User } from '../models/user.model';
 import * as authActions from '../auth/auth.actions';
-import * as ingressEgressActions from '../dashboard/ingress-egress/ingress-egress.actions';
+import * as ingressEgressActions from '../ingress-egress/ingress-egress.actions';
 import { AppState } from '../app.reducer';
 import { Store } from '@ngrx/store';
 

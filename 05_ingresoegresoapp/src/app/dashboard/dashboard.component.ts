@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { AppState } from '../app.reducer';
 import { IngressEgressService } from '../services/ingress-egress.service';
-import * as ingressEgressActions from './../dashboard/ingress-egress/ingress-egress.actions';
+import * as ingressEgressActions from '../ingress-egress/ingress-egress.actions';
 
 @Component({
   selector: 'app-dashboard',

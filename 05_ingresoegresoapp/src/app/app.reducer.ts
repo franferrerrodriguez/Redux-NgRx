@@ -1,7 +1,7 @@
 import { ActionReducerMap } from "@ngrx/store";
 import * as uiReducer from './shared/ui.reducer';
 import * as authReducer from './auth/auth.reducer';
-import * as ingressEgressReducer from './dashboard/ingress-egress/ingress-egress.reducer';
+import * as ingressEgressReducer from './ingress-egress/ingress-egress.reducer';
 
 export interface AppState {
     ui: uiReducer.State,
