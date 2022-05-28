@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import { AppState } from 'src/app/app.reducer';
+import { StateWithIngressEgress } from '../ingress-egress.reducer';
 
 @Component({
   selector: 'app-stadistic',
@@ -16,7 +16,7 @@ export class StadisticComponent implements OnInit, OnDestroy {
   totalAmountEgress: number;
   differenceAmountIngressEgress: number;
 
-  constructor(private store: Store<AppState>) { }
+  constructor(private store: Store<StateWithIngressEgress>) { }
 
   ngOnInit(): void {
     this.ingressEgressSubs = this.store.select('ingressEgress').subscribe(state => {
