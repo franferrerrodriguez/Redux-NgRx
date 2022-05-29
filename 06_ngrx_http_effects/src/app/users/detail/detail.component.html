@@ -1,0 +1,26 @@
+<button class="btn btn-primary" type="button" disabled *ngIf="loading">
+  <span
+    class="spinner-grow spinner-grow-sm"
+    role="status"
+    aria-hidden="true"
+  ></span>
+  Loading...
+</button>
+
+<div class="alert alert-danger" role="alert" *ngIf="error">
+  {{ error | json }}
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+        <div class="card h-100">
+            <img src="{{ user?.avatar }}" class="card-img-top" />
+            <div class="card-body">
+            <h5 class="card-title">{{ user?.first_name }} {{ user?.last_name }}</h5>
+            </div>
+            <div class="card-footer">
+            <small class="text-muted">{{ user?.email }}</small>
+            </div>
+        </div>
+    </div>
+</div>

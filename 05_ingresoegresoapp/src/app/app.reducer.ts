@@ -5,12 +5,10 @@ import * as ingressEgressReducer from './ingress-egress/ingress-egress.reducer';
 
 export interface AppState {
     ui: uiReducer.State,
-    user: authReducer.State,
-    //ingressEgress: ingressEgressReducer.State
+    user: authReducer.State
 }
 
 export const appReducers: ActionReducerMap<AppState> = {
     ui: uiReducer.uiReducer,
-    user: authReducer.authReducer,
-    //ingressEgress: ingressEgressReducer.ingressEgressReducer
+    user: authReducer.authReducer
 }
